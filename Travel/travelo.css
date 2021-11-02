@@ -1,0 +1,647 @@
+/********* SOMMAIRE **********/
+/* 
+1.GENERAL
+2.HEADER
+    2.1 Barre de navigation Top
+    2.2 Container Recherche Top
+    2.3 Formulaire recherche top
+        2.3.1 Label
+        2.3.2 Input
+        2.3.3 Button
+    2.4 Vignettes info header
+3.MAIN
+    3.1 Container destination cards
+    3.2 Container blog images
+    3.3 Container P customers
+4.FOOTER
+5.REPONSIVE (Mobile First)
+    5.1 Responsive Header
+    5.2 Responsive Main
+    5.3 Responsive Footer
+*/
+
+
+/****** Variables ********/
+:root {
+    --color-button: #4468E2;
+    --color-font-header: rgba(255, 255, 255, 0.95);
+    --color-green-text: #163235;
+    --color-bg-footer: #D2DDF5;
+}
+
+/* 1.GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+} 
+
+h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 2.5rem 0;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+
+/* 2.HEADER */
+/* 2.1 Barre de navigation Top */
+.header-nav {
+    display: flex;
+    font-weight: 500;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    color: #1C4961;
+    margin: 0.8rem 0;
+}
+
+.nav-top {
+    margin: 0 1.8rem;
+}
+
+.nav-top:hover {
+    font-weight: 600;
+}
+
+.connect {
+    color: var(--color-font-header);
+    border-radius: 15px;
+    padding: 5px 15px;
+    background-color: var(--color-button);
+}
+
+.connect:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+
+/* 2.2 Container Form Recherche Top  */
+.container-top {
+    width: 100%;
+    height: 52vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-font-header);
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3)), 
+      url(images/header2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 18px;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container-top h1 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.container-top p {
+    max-width: 80%;
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.3rem;
+}
+
+/* 2.3 Formulaire recherche top */
+.form-top {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    font-size: 0.9em;
+    background-color:#f0f4fce5;
+    border-radius: 6px;
+    padding: 0.5rem 0.6rem;
+    gap: 1.1rem;
+    text-align: center;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/* 2.3.1 Label */
+.form-top label {
+    color: black;
+    font-weight: 600;
+}
+
+/* 2.3.2 Input */
+.form-top input {
+    height: 1.4rem;
+    color: rgb(110, 96, 96);
+    background-color: transparent;
+    border: transparent;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.9em;
+    font-weight: 500;
+    opacity: 0.6;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.where-input {
+    background-image: url(images/ico_loupe.svg);
+    background-repeat: no-repeat;
+    background-position: 5% center;
+    background-size: 0.5rem;
+    padding-left: 0.8rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+/* 2.3.3 Button */
+.explore-button {
+    color: var(--color-font-header);
+    font-size: 1em;
+    border: solid 1px transparent;
+    border-radius: 7px;
+    padding: 0.7rem 1.8rem;
+    background-color: var(--color-button);
+    margin: 0 auto;;
+}
+
+.explore-button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.date-input:hover {
+    cursor: pointer;
+}
+
+/* *** FORM VERSION GRID (enlever les div "item" du form si grid ****  
+.form-top {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    grid-template-areas: 
+    "a c e g"
+    "b d f g";
+    justify-content: center;
+    align-items: center;
+}
+.where {
+    grid-area: a;
+}
+.where-input {
+    grid-area: b;
+}
+.checkin {
+    grid-area: c;
+}
+.checkin-input {
+    grid-area: d;
+}
+.checkout {
+    grid-area: e;
+}
+.checkout-input {
+    grid-area: f;
+}
+.submit {
+    grid-area: g;
+}
+*/
+
+/* 2.4 Vignettes info header */
+.vignettes-info {
+    width: 100%;
+    background-color: white;
+    font-size: 1em;
+    color: #0F0F0F;
+}
+
+.header-info {
+    width: 100%;
+    padding-bottom: 1.4rem; 
+    border-radius: 12px;
+    box-shadow: 6px 8px 11px -4px #7E93CC;
+}
+
+.img-header-info {
+    height: 4rem;
+    width: 4rem;
+    background-color: #4469e20e;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.title-header-info {
+    font-weight: 600;
+    margin: 0.3rem 0;
+}
+
+/* 3. MAIN  */
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.nav-destination {
+    font-size: 1em;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.05);
+    line-height: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.selection:hover, .selection:active {
+    box-shadow: 0px 3px 0px 0px var(--color-green-text);
+    color: var(--color-green-text);
+}
+
+/* 3.1 Container destination cards */
+.container-destination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container-destination > * {
+    flex: 1 1 100%;
+}
+
+.carte-destination {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 1em;
+    color: var(--color-green-text);
+}
+
+.img-destination {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 15px;
+    margin-right: 0.5rem;
+}
+
+.align-titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.texte-destination {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.info-destination {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+.card-p {
+    width: 100%;
+    font-size: 1em;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.icone-destination {
+    width: 1.2rem;
+    margin-right: 0.3rem;
+}
+
+.info-destination .price {
+    font-weight: 700;
+    font-size: 1.7em;
+}
+
+
+
+/* 3.2 Container blog images */
+.container-blog {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: 50vh;
+    width: 100%;
+}
+
+.container-blog a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8em;
+    font-weight: 700;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.container-img23 {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    gap: 0.8rem;
+}
+.container-blog a:hover {
+    opacity: 0.9;
+    font-size: 1.85em;
+    transition: 0.3s;
+}
+.container-blog > a:hover {
+    font-size: 1.85em;
+}
+
+.image1 {
+    background-image: url(images/nopath.jpg);
+    width: 50%;
+}
+
+.image2 {
+    background-image: url(images/plane.jpg);
+    height: 50%;
+}
+
+.image3 {
+    background-image: url(images/happy-customer.jpg);
+    height: 50%;
+}
+
+/* 3.3 Container P customers */
+.container-customers {
+    background-color: white;
+    background-image: url(images/ico_quote.svg);
+    background-repeat: no-repeat;
+    background-size: 2rem;
+    background-position: 1% 20%;
+    width: 100%;
+    padding: 3rem;
+    box-shadow: 6px 8px 11px -4px #7E93CC;
+    margin-bottom: 2rem;
+}
+.customers-p {
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.4rem;
+}
+
+.photo-customer {
+    background-image: url(images/project-manager.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50px;
+}
+.customers-info {
+    display: flex;
+    gap: 1rem;
+}
+.customers-nom {
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.info-nom {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.info-job {
+    color: rgb(160, 160, 160);
+    font-weight: 500 ;
+    font-size: 0.9em;
+}
+
+/* 4.FOOTER */
+footer{
+    width: 100%;
+    height: 12vh;
+    margin-top: 3em;
+}
+.footer-nav {
+    background-color: var(--color-bg-footer);
+    border-radius: 18px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav a:hover {
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.footer-navbar,
+.footer-reseaux {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.footer-navbar {
+    width: 70%;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.footer-reseaux{
+    width: 30%;
+}
+
+.footer-logo {
+    width: 1.7rem;
+    height: auto;
+}
+
+.copyright {
+    height: 2rem;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/******* 5.REPONSIVE (MOBILE FIRST) ******/
+@media only screen and (max-width: 398px)
+{
+    /* NAVBAR TOP */
+    .connect {
+        margin-top: 0.6rem;
+        justify-self: auto;
+    }
+} 
+
+@media only screen and (min-width: 695px)
+{
+    /* GENERAL RESP */
+    body {
+        font-size: 14px;
+    }
+    /* 5.1 Responsive Header */
+   .header-nav {
+       justify-content: space-between;
+   }
+   h2 {
+    font-size: 2em;
+    margin: 4rem 0 3rem;
+    }
+   .container-top p {
+    max-width: 50%;
+    margin-bottom: 1rem;
+    }
+   .form-top {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#f0f4fce5;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    text-align:start;
+    }
+    .form-top input {
+    text-align:start;
+    margin: 0;
+    }
+    .where-input {
+    background-position: center left;
+    }
+
+    .explore-button {
+    padding: 0.9rem 1.8rem;
+    margin: 0;
+    }
+
+    .vignettes-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.7rem;
+    }
+
+    .header-info {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.08rem;
+    border-radius: 12px;
+    padding: 1.5rem 1.1rem 4.3rem;
+    }
+
+    /* 5.2 Responsive Main */
+    .container-destination > * {
+        flex: 1 1 25%;
+    }
+    .carte-destination {
+        flex-direction: column;
+        gap: 0.5rem;
+        
+    }
+    .align-titre {
+        gap: 0.8em;
+    }
+    .img-destination {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    .texte-destination {
+        margin: 0 0 1.5rem;
+
+    }
+    .info-destination p {
+        font-size: 1.1em ;
+    }
+    .icone-destination{
+        width: 1.5rem;
+    }
+    .card123 {
+        margin-bottom: 2rem;
+    }
+    .container-destination {
+        gap: 2em;
+    }
+    .titre-destination {
+        font-size: 1.2em;
+    }
+    .container-blog .image1 {
+        font-size: 2.4em;
+        padding: 0 3rem;
+    }
+    .container-blog p {
+        padding: 0 2.5rem;
+    }
+    .container-blog > a:hover {
+        font-size: 2.45em;
+    }
+    /* 5.3 Responsive Footer */
+    .footer-navbar {
+        width: 60%;
+    }
+    .footer-reseaux{
+        width: 20%;
+    }
+    .footer-logo {
+        width: 1.9rem;
+    }
+}
+
+@media only screen and (min-width: 1024px)
+{
+    body {
+        font-size: 16px;
+    }
+}

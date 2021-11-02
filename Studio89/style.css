@@ -1,0 +1,406 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: roboto, sans-serif;
+  font-size: 14px;
+  background-color: black;
+  color: white;
+  height: 100vh;
+  background-color: black;
+  background-image: url(photos/moon.png);
+  background-repeat: no-repeat;
+  background-size: 13rem;
+  background-position: 105% -5%;
+  overflow: hidden;
+}
+
+a {
+  color:  inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: .67;
+  transition: .3s;
+}
+
+/***************** MENU HAMBURGER ***************/
+
+.menuToggle
+{
+  display: block;
+  position: relative;
+  top: 5px;
+  left: 20px;
+  
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.menuToggle a
+{
+  text-decoration: none;
+  color: white;
+  
+  transition: color 0.3s ease;
+}
+
+.menuToggle a:hover
+{
+  opacity: 0.67;
+  transition: .3s;
+}
+
+
+.menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+.menuToggle span
+{
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin-bottom: 6px;
+  position: relative;
+  
+  background: white;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+.menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+.menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-1px, 1px);
+  background: white;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Oh yeah and the last one should go the other direction
+ */
+.menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+.menu
+{
+  position: absolute;
+  width: 210px;
+  margin: -100px 0 0 -98px;
+  padding-left: 15px;
+  padding-top: 125px;
+  padding-bottom: 20px;
+  background: transparent;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.menu li
+{
+  padding: 8px 0;
+  font-size: 1rem;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+.menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/*********** NAVBAR TOP ************/
+
+.topbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-width: 100%;
+  height: 10%;
+  padding-left: 15px;
+  font-size: 0.7rem;
+}
+
+.menu {
+  padding-left: 15px;
+}
+
+.topbar-nav,
+.follow {
+  display:none;
+}
+
+.topbar-logo {
+  height: 4rem;
+}
+
+.logo {
+  height: 1rem;
+}
+
+
+/*********** MAIN ************/
+
+main {
+  background-image: url(photos/spaceman.png);
+  background-repeat: no-repeat;
+  background-size: 11rem;
+  background-position: 83% 47%;
+  height: 80%;
+  min-width: 100%;
+  padding-left: 15px;
+}
+
+.container {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+.play {
+  height: 3rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+.bouton {
+  font-weight: lighter;
+  font-size: 0.6rem;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 10px 0;
+  width: 80%;
+}
+
+h2 {
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+/************** Footer bar ************/
+
+footer {
+  min-width: 100%;
+  height: 10%;
+}
+
+.footbar-nav {
+  font-size: 20px;
+  height: 25px;
+  transition: 0.5s;
+}
+
+.footbar-nav img:hover {
+  height: 25px;
+  transition: 0.4s;
+}
+
+
+.follow-bot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+.footbar-nav {
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 75px;
+  margin-top: 15px;
+}
+
+.trait {
+  height: 1px;
+  width: 15%;
+  background-color: white;
+  top: 50%;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+
+
+@media only screen and (min-width: 500px) {
+  body {
+    background-size: 40vw;
+  }
+  .menu li {
+  font-size: 1.3rem;
+  }
+
+  .topbar-logo {
+  height: 91px;
+  }
+
+  .menu {
+  padding-left: 10px;
+  }
+
+  main {
+  background-size: 50vw;
+  }
+
+  .bouton {
+    font-size: 2vw;
+  }
+
+  .play{
+    height: 8vw;
+  }
+  
+  h1 {
+    font-size: 6.5vw;
+  }
+  
+  h2 {
+    font-size: 2vw;
+  }
+  .logo {
+    height: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 770px) {
+  h1 {
+    font-size: 49px;
+    width: 75%;
+  }
+  
+  h2, .bouton {
+    font-size: 1rem;
+  }
+  .logo {
+    height: 19px;
+  }
+  main {
+    background-size: 380px;
+    }
+  .play{
+    height: 60px;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+  main {
+    background-position: center;
+    background-size: 35vw;
+    }
+  footer {
+    display: none;
+  }
+  h1 {
+    width: 60%;
+  }
+  .topbar-nav,
+  .follow {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    letter-spacing: 4px;
+  }
+  .topbar{
+    justify-content: space-between;
+    padding-right: 30px;
+  }
+  .trait-top {
+    height: 1px;
+    width: 100px;
+    background-color: white;
+    top: 50%;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  .menuToggle {
+    margin-right: auto;
+  }
+  .logo {
+    height: 25px;
+    padding-right: 25px;
+  }
+  .follow {
+    margin-right: 15px;
+  }
+
+  h1 {
+    font-size: 4.5vw;
+  }
+
+  h2, .bouton {
+    font-size: 1rem;
+  }
+}
+

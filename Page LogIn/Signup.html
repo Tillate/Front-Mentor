@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+    <title>Sign up</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sign Up</h1>
+            <h2 class="please-log">Please login to continue using our app.</h2>
+            <h2>Enter via social networks</h2>
+            <div class="boutons-reseaux">
+                <a href="#" class="bouton-twitter"><img src="images/ico_twitter.svg" alt="Logo Twitter"></a>
+                <a href="#" class="bouton-facebook"><img src="images/ico_facebook.svg" alt="Logo Facebook"></a>
+            </div>
+        </header>
+        
+        <main>
+            <h2 class="titre-main">or sign up with email</h2>
+            <form action="confirmation.html">
+                <div>
+                    <input type="text" name="email" id="emailinput" placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" name="password" id="passwordinput" placeholder="Password">
+                </div>
+                <div class="forgot-pass">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember" class="remember2">I agree with Private Policy</label>
+                </div>
+                <div class="button-login">
+                    <button type="submit" value="Signup">Sign up</button>
+                </div>
+            </form>
+            <h2>Already have an account ? <a href="login.html">Log in</a></h2>
+        </main>
+    </div>
+</body>
+</html>

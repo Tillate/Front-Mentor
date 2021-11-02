@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: #000000;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    max-height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+      opacity: .67;
+  }
+
+    /* ********** HEADER *********** */
+
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+  h1 {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  header img {
+      margin: 15px 0;
+      width: 75%;
+      height: auto;
+  }
+
+
+  /* ********** MAIN *********** */
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  h2 {
+    color: #8B959A;
+    font-size: 14px;
+    font-weight: 800;
+    margin: 15px 0;
+  }
+
+  .boutons-reseaux {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .boutons-reseaux a {
+    padding: 10px 0;
+  }
+
+  .boutons-reseaux img {
+    height: 30px;
+    width: 30px;
+  }
+
+  .bouton-twitter {
+    border: 1px solid #76A9EA;
+    background: #76A9EA;
+    border-radius: 5px;
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 2.5%;
+  }
+
+  .bouton-facebook {
+    border: 1px solid #475993;
+    background: #475993;
+    border-radius: 5px;
+    width: 40%;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 2.5%;
+  }
+
+  .bouton-signup {
+    font-family: roboto, sans-serif;
+    border: 1px solid #3C82FF;
+    background: #3C82FF;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 95%;
+    padding: 15px 0;
+  }
+
+  .sign-up {
+    width: 90%;
+    text-align: center;
+  }
+
+  h2 a {
+      color: #3C82FF;
+  }
+
+  .thank-img {
+    margin-bottom: 50px;
+  }
+
+  .welcome-h2 {
+    margin-bottom: 30px;
+  }
+
+  .button-login {
+    font-family: roboto, sans-serif;
+    border: 1px solid #3C82FF;
+    background: #3C82FF;
+    border-radius: 5px;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 70%;
+    padding: 15px 0;
+  }
+
+
+
+  @media only screen and (min-width: 575px)
+  {
+    h1 {
+      font-size: 2rem;  
+    }
+    h2 {
+        font-size: 1rem;
+    }
+    header img {
+        height: 300px;
+    }
+    .bouton-facebook,
+    .bouton-twitter {
+        padding: 18px 100px;
+    }
+    .bouton-facebook img,
+    .bouton-twitter img {
+        height: 35px;
+        width: 35px;
+    }
+    .bouton-signup {
+        font-size: 1.5rem;
+    }
+    body {
+      background:linear-gradient(#6590DE, #A7CEFF);
+    }
+    .container, .container-conf {
+      background-color: white;
+      box-shadow: 4.5px 4.5px 3.6px rgba(0, 0, 0, 0.06), 12.5px 12.5px 10px rgba(0, 0, 0, 0.096),
+      30.1px 30.1px 24.1px rgba(0, 0, 0, 0.128), 100px 100px 80px rgba(0, 0, 0, 0.16);
+      border-radius: 5px;
+      width: 90vw;
+      height: 90vh;
+    }
+    .container-conf {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+    .thank-img {
+      height: 320px;
+      margin: 0;
+    }
+  }
+
+  @media only screen and (min-width: 700px)
+  {
+    .container {
+      width: 650px;
+    }
+  }
