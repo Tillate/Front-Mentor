@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+}
+
+:root {
+  --color: #2cc09c;
+}
+
+.topbar {
+  font-family: Roboto, sans-serif;
+  font-size: 12px;
+  background: #212529;
+  color: #ffffff;
+}
+
+.topbar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topbar ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topbar li {
+  padding: 0 8px;
+}
+
+.topbar li,
+.topbar a {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.topbar svg {
+  width: 12px;
+  height: 12px;
+  margin-right: 8px;
+}
+
+.topbar .topbar-lang {
+  margin-left: auto;
+}
+
+.topbar-infos {
+  background-color: var(--color);
+}
+
+.topbar-links svg {
+  color: var(--color);
+}
+
+.topbar-links a:hover {
+  color: var(--color);
+}
+
+/* Faire un triangle en CSS */
+.topbar-lang a::after {
+  content: "";
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-top: 6px solid white;
+  border-right: 3px solid transparent;
+  border-left: 3px solid transparent;
+  margin-left: 6px;
+}
+
+.topbar-container {
+  max-width: 1016px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 720px) {
+  .topbar {
+    font-size: 14px;
+    background: linear-gradient(to right, var(--color) 50%, #212529 50%);
+  }
+  .topbar-container {
+    display: flex;
+    justify-content: space-between;
+    background: #212529;
+  }
+  .topbar li,
+  .topbar a {
+    height: 55px;
+  }
+  .topbar svg {
+    width: 16px;
+    height: 16px;
+  }
+  .topbar-infos li:last-child {
+    background: #212529;
+    padding: 0;
+  }
+
+  .topbar-infos li:last-child::before {
+    content: "";
+    margin-right: 15px;
+    display: inline-block;
+    border-right: solid 30px transparent;
+    border-bottom: solid 55px var(--color);
+  }
+
+  .topbar-infos li:last-child svg {
+    color: var(--color);
+  }
+}
